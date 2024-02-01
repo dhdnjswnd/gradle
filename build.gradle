@@ -52,11 +52,22 @@ tasks.named('asciidoctor') {
 }
 
 tasks.register("developer"){
+    doFirst {
+        print "hello developer1\n"
+    }
+    doFirst {
+        print "hello developer3\n"
+    }
     print("Hello World!\n") // 2.
     doLast {
         print "good bye" //6.
     }
+}
 
+tasks.named("developer"){
+    doFirst {
+        print "hello developer2\n"
+    }
 }
 
 tasks.register("manager"){
